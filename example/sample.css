@@ -1,0 +1,23 @@
+/*
+Samle CSS for creating the Times Cited badge.
+*/
+.wos-cited {
+ font-size: 12px;
+}
+
+.wos-badge {
+  margin: 0 5px 5px 0;
+  background-color: #ff8100;
+  font-size: 16px;
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  color: #fff;
+  vertical-align: middle;
+  border-radius: 10px;
+}
+
+.wos-badge a {
+ text-decoration: none;
+ color: #fff;
+}

@@ -9,14 +9,10 @@ $(document).ready(function(){
 function processResource() {
   var wosId = $.trim($("[id^=wosId-] li").text());
   if (wosId != "") {
-    console.debug(wosId);
+    //console.debug(wosId);
     fetchWoS(wosId);
   } else {
-    console.debug('wosId empty');
-  };
-  var doi = $.trim($("[id^=doi-] li").text());
-  if (doi != "") {
-    addAltmetric(doi);
+    //console.debug('wosId empty');
   };
 }
 
