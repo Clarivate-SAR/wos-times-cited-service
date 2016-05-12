@@ -1,4 +1,4 @@
-#AMR web service
+#Web of Science Times Cited web service
 
 
 
