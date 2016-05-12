@@ -1,4 +1,4 @@
-package com.github.lawlesst.amrservice;
+package com.wokinfo.amrservice;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
@@ -22,7 +22,7 @@ import java.util.HashMap;
 import org.w3c.dom.Document;
 
 /**
- * Created by ted on 1/10/16.
+ * Reads XML responses from AMR and processes into JSON friendly structure.
  */
 public class AmrReader {
     public static void main(String[] args) throws IOException, org.xml.sax.SAXException, ParserConfigurationException, XPathExpressionException {

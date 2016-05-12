@@ -1,0 +1,33 @@
+<request xmlns="http://www.isinet.com/xrpc41" src="app.id=VIVO">
+    <fn name="LinksAMR.retrieve">
+        <list>
+            <!-- LinksAMR web service documentation
+             http://ipscience-help.thomsonreuters.com/LAMRService/WebServicesOverviewGroup/overview.html
+            -->
+            <!-- authentication -->
+            <map>
+                <val name="username">xxx</val>
+                <val name="password">xxx</val>
+            </map>
+            <!-- what to to return -->
+            <map>
+                <list name="WOS">
+                    <val>timesCited</val>
+                    <val>ut</val>
+                    <val>doi</val>
+                    <val>pmid</val>
+                    <val>sourceURL</val>
+                    <val>citingArticlesURL</val>
+                    <val>relatedRecordsURL</val>
+                </list>
+            </map>
+            <!-- LOOKUP DATA -->
+            <map>
+                <map name="cite_1">
+                    <!-- this will be replaced on load -->
+                    <val name="ut">--UT--</val>
+                </map>
+            </map>
+        </list>
+    </fn>
+</request>

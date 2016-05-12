@@ -1,4 +1,4 @@
-package com.github.lawlesst.amrservice;
+package com.wokinfo.amrservice;
 
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 /**
- * Created by ted on 12/20/15.
+ * Client to post requests to AMR and read responses.
  */
 public class AmrClient {
 

@@ -1,4 +1,4 @@
-package com.github.lawlesst.amrservice;
+package com.wokinfo.amrservice;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
@@ -9,19 +9,32 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/*
+Web Service for making requests to AMR and returning WoS info.
+
+At moment, only parameter accepted is the WoS UT.
+ */
+
 public class AmrServlet extends HttpServlet
 {
     private static Boolean cacheAmr = true;
+    private static final Logger log = Logger.getLogger( AmrServlet.class.getName() );
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         String[] pathParts = request.getPathInfo().split("/");
+        if (pathParts.length < 2) {
+            response.sendError(500, "No UT provided");
+        }
         String idKey = pathParts[1];
         String requestedUT = pathParts[2];
+        log.info("Requested UT: " + requestedUT);
         if (!idKey.equals("ut")) {
             throw new ServletException("Invalid parameters. Only /ut/ is supported.");
         }
