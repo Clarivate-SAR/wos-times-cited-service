@@ -4,7 +4,7 @@
 
 ## URLs
 
-`/amr/ut/{Web of Science unique identifier UT}.
+`/amr/ut/{Web of Science unique identifier UT}`
 
 ## Configuration
 
