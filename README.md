@@ -4,7 +4,7 @@
 
 ## URLs
 
-`/amr/ut/{000029202}` + Web of Science ID.
+`/amr/ut/{Web of Science unique identifier UT}.
 
 ## Configuration
 
