@@ -23,11 +23,11 @@ To run on an alternative port:
 
 Build a WAR for deployment.
 
-`$mvn package`
+`$ mvn package`
 
 Copy the war to your servlet directory.
 
-`cp cp target/wos-0.1-SNAPSHOT.war /var/lib/tomcat7/webapps/wos.war`
+`$ cp cp target/wos-0.1-SNAPSHOT.war /var/lib/tomcat7/webapps/wos.war`
 
 
 ## Embedding in VIVO
