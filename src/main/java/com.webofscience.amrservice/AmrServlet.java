@@ -1,19 +1,18 @@
-package com.wokinfo.amrservice;
+package com.webofscience.amrservice;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
-import com.google.common.primitives.Booleans;
 import org.json.JSONObject;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.logging.Logger;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /*
 Web Service for making requests to AMR and returning WoS info.
@@ -55,7 +54,6 @@ public class AmrServlet extends HttpServlet
 
     private static HashMap getResponse(String ut) throws IOException {
         String requestDoc = readTemplate().replace("--UT--", ut);
-        //System.out.println(requestDoc);
         AmrClient ac = new AmrClient();
         HashMap rsp = ac.getResponse(requestDoc);
         return rsp;

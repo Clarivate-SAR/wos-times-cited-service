@@ -1,6 +1,5 @@
-package com.wokinfo.amrservice;
+package com.webofscience.amrservice;
 
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -18,7 +17,7 @@ public class AmrClient {
 
     public HashMap getResponse(String docRequest) throws IOException {
         String raw = getAPIResponse(docRequest);
-        HashMap rsp = AmrReader.readResponse(raw);
+        HashMap rsp = new AmrReader().readResponse(raw);
         return rsp;
     }
 

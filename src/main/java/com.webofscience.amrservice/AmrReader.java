@@ -1,4 +1,4 @@
-package com.wokinfo.amrservice;
+package com.webofscience.amrservice;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;

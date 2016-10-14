@@ -6,7 +6,7 @@
   <display-name>WoS services</display-name>
   <servlet>
     <servlet-name>AmrServlet</servlet-name>
-    <servlet-class>com.github.lawlesst.amrservice.AmrServlet</servlet-class>
+    <servlet-class>com.webofscience.amrservice.AmrServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AmrServlet</servlet-name>
