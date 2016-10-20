@@ -7,7 +7,7 @@ You will need a subscription to the Web of Science and user name a password to a
 
 For information about other Web of Science web services and the data usage policy, please [see this page](http://ip-science.interest.thomsonreuters.com/data-integration).
 
-![screenshot of application](vivo-amr-service.png?raw=true "VIVO AMR service")
+![screenshot of application](example/vivo-amr-service.png?raw=true "VIVO AMR service")
 
 ## Implementation details
 
