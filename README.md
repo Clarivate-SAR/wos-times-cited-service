@@ -1,7 +1,7 @@
 #Web of Science AMR Times Cited web service
 
 This Java web service allows for embedding article information from the [Web of Science](http://ipscience.thomsonreuters.com/product/web-of-science/) in web pages.
-This was created for embedding times cited counts and links to the Web of Science within the [VIVO](http://vivoweb.org) application.
+This was created for embedding times cited counts and links to the Web of Science within the [VIVO](http://vivoweb.org) application via real-time queries to the Web of Science.
 
 The Article Match Retrieval (AMR) web service from the Web of Science is utilized, see [documentation](http://ipscience-help.thomsonreuters.com/LAMRService/WebServicesOverviewGroup/overview.html).
 You will need a subscription to the Web of Science and user name a password to access this service. Please contact [tech support](http://ip-science.thomsonreuters.com/techsupport/) to obtain credentials and indicate that you plan to use the AMR service with this tool.
@@ -14,6 +14,8 @@ For information about other Web of Science web services and the data usage polic
 This web service can be built as a separate Java application (war) that runs alongside your VIVO application. 
 
 ### URLs
+
+Currently, only Web of Science unique identifiers (UT) are supported. This identifiers must be stored in your local system.
 
 `/ut/{Web of Science unique identifier UT}`
 
