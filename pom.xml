@@ -4,10 +4,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.webofscience.amrservice</groupId>
-    <artifactId>wos</artifactId>
+    <artifactId>amr</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Web of Science Services</name>
+    <name>Web of Science AMR Service</name>
 
     <properties>
         <!-- Adapt this to a version found on

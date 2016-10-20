@@ -18,7 +18,7 @@ function processResource() {
 
 
 function fetchWoS(wosId) {
-  var apiURL = '/wos/amr/ut/' + wosId;
+  var apiURL = '/amr/ut/' + wosId;
   console.debug(apiURL);
   $.getJSON(apiURL, function (data) {
     //console.debug(data);

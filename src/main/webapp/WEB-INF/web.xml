@@ -10,6 +10,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>AmrServlet</servlet-name>
-    <url-pattern>/amr/*</url-pattern>
+    <url-pattern>/*</url-pattern>
   </servlet-mapping>
 </web-app>
