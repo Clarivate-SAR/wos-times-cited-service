@@ -1,3 +1,4 @@
 target/*
 src/main/resources/template.xml
 .idea/*
+wos.iml
