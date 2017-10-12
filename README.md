@@ -1,4 +1,4 @@
-#Web of Science AMR Times Cited web service
+# Web of Science AMR Times Cited web service
 
 This web service supports embedding Times Cited counts from the [Web of Science](http://ipscience.thomsonreuters.com/product/web-of-science/) in the [VIVO](http://vivoweb.org) application via real-time queries to the Web of Science.
 
