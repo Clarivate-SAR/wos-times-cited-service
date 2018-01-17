@@ -15,8 +15,10 @@ This web service can be built as a separate Java application (war) that runs alo
 
 ### URLs
 
-Currently, only Web of Science unique identifiers (UT) are supported. You can call the service directly:
+You may call the service using a DOI, PubMed ID (PMID), or Web of Science unique identifier (UT).
 
+`/doi/{DOI}`
+`/pmid/{PubMed ID}`
 `/ut/{Web of Science unique identifier UT}`
 
 ### Configuration
@@ -30,6 +32,8 @@ Copy `src/main/resources/sample_template.xml` to `src/main/resources/template.xm
 To run on an alternative port:
 
 `$ mvn jetty:run -Djetty.port=5000`
+
+You should now be able to call the service: http://localhost:5000/doi/10.1109/82.486465
 
 ### Building
 

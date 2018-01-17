@@ -27,15 +27,15 @@ public class AmrServlet extends HttpServlet
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        String[] pathParts = request.getPathInfo().split("/");
+        String[] pathParts = request.getPathInfo().split("/", 3);
         if (pathParts.length < 2) {
             response.sendError(500, "No UT provided");
         }
         String idKey = pathParts[1];
         String requestedUT = pathParts[2];
         log.info("Requested UT: " + requestedUT);
-        if (!idKey.equals("ut")) {
-            throw new ServletException("Invalid parameters. Only /ut/ is supported.");
+        if (!idKey.matches("ut|doi|pmid")) {
+            throw new ServletException("Invalid search parameter. Only ut, pmid, and doi are supported.");
         }
         String thisEtag = cacheKey(requestedUT);
         // check cache
@@ -43,7 +43,7 @@ public class AmrServlet extends HttpServlet
             response.addHeader("ETag", thisEtag);
             response.sendError(HttpServletResponse.SC_NOT_MODIFIED, "Not Modified");
         } else {
-            HashMap amrRsp = getResponse(requestedUT);
+            HashMap amrRsp = getResponse(requestedUT, idKey);
             JSONObject json = new JSONObject(amrRsp);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
@@ -52,8 +52,9 @@ public class AmrServlet extends HttpServlet
         }
     }
 
-    private static HashMap getResponse(String ut) throws IOException {
+    private static HashMap getResponse(String ut, String param) throws IOException {
         String requestDoc = readTemplate().replace("--UT--", ut);
+        requestDoc = requestDoc.replace("--PARAM--", param);
         AmrClient ac = new AmrClient();
         HashMap rsp = ac.getResponse(requestDoc);
         return rsp;
