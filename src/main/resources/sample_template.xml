@@ -25,7 +25,7 @@
             <map>
                 <map name="cite_1">
                     <!-- this will be replaced on load -->
-                    <val name="ut">--UT--</val>
+                    <val name="--PARAM--">--UT--</val>
                 </map>
             </map>
         </list>
