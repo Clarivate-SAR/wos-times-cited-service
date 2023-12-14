@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.webofscience.amrservice</groupId>
-    <artifactId>amr</artifactId>
+    <groupId>com.webofscience.starterservice</groupId>
+    <artifactId>starter</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Web of Science AMR Service</name>
+    <name>Web of Science Starter API Service</name>
 
     <properties>
         <!-- Adapt this to a version found on
@@ -45,6 +45,11 @@
             <artifactId>json</artifactId>
             <version>20131018</version>
         </dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>2.9.8</version>
+	</dependency>
     </dependencies>
 
     <build>

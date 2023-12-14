@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>AMR service here</h2>
+<h2>Starter service here</h2>
 </body>
 </html>

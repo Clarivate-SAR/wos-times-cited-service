@@ -5,11 +5,11 @@
 <web-app>
   <display-name>WoS services</display-name>
   <servlet>
-    <servlet-name>AmrServlet</servlet-name>
-    <servlet-class>com.webofscience.amrservice.AmrServlet</servlet-class>
+    <servlet-name>StarterServlet</servlet-name>
+    <servlet-class>com.webofscience.starterservice.StarterServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AmrServlet</servlet-name>
+    <servlet-name>StarterServlet</servlet-name>
     <url-pattern>/*</url-pattern>
   </servlet-mapping>
 </web-app>

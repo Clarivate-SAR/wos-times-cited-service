@@ -1,4 +1,4 @@
-package com.webofscience.amrservice;
+package com.webofscience.starterservice;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
@@ -15,18 +15,19 @@ import java.util.HashMap;
 import java.util.logging.Logger;
 
 /*
-Web Service for making requests to AMR and returning WoS info.
+Web Service for making requests to Starter and returning WoS info.
 
 At moment, only parameter accepted is the WoS UT.
  */
 
-public class AmrServlet extends HttpServlet
+public class StarterServlet extends HttpServlet
 {
-    private static Boolean cacheAmr = true;
-    private static final Logger log = Logger.getLogger( AmrServlet.class.getName() );
+    private static Boolean cacheStarter = true;
+    private static final Logger log = Logger.getLogger( StarterServlet.class.getName() );
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        String starterKey = "841d7f50c8c12dab692c639078e5fc14bbcf2a6f";
         String[] pathParts = request.getPathInfo().split("/", 3);
         if (pathParts.length < 2) {
             response.sendError(500, "No UT provided");
@@ -43,8 +44,8 @@ public class AmrServlet extends HttpServlet
             response.addHeader("ETag", thisEtag);
             response.sendError(HttpServletResponse.SC_NOT_MODIFIED, "Not Modified");
         } else {
-            HashMap amrRsp = getResponse(requestedUT, idKey);
-            JSONObject json = new JSONObject(amrRsp);
+            HashMap wosRsp = getResponse(starterKey, requestedUT);
+            JSONObject json = new JSONObject(wosRsp);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
             response.getWriter().write(json.toString());
@@ -52,11 +53,9 @@ public class AmrServlet extends HttpServlet
         }
     }
 
-    private static HashMap getResponse(String ut, String param) throws IOException {
-        String requestDoc = readTemplate().replace("--UT--", ut);
-        requestDoc = requestDoc.replace("--PARAM--", param);
-        AmrClient ac = new AmrClient();
-        HashMap rsp = ac.getResponse(requestDoc);
+    private static HashMap getResponse(String starterKey, String ut) throws IOException {
+        StarterClient ac = new StarterClient();
+        HashMap rsp = ac.getResponse(starterKey, ut);
         return rsp;
     }
 
@@ -66,7 +65,7 @@ public class AmrServlet extends HttpServlet
     }
 
     private Boolean shouldCache(HttpServletRequest request, String thisEtag) {
-        if (cacheAmr.equals(false)) {
+        if (cacheStarter.equals(false)) {
             return false;
         }
         else if (!isConditionalRequest(request)) {
